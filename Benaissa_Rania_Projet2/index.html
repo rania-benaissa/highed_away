@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>My game</title>
+
+    <style>
+        html,
+        body {
+            margin: 0 auto;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        #game {
+            margin: 10px auto;
+            padding: 0;
+            width: 800px;
+            height: 600px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div id="game"></div>
+
+    <script src="scripts/phaser.js"></script>
+    <script src="scripts/GlobalVariables.js"></script>
+    <script src="scripts/GamePlay.js"></script>
+
+    <script>
+
+        // GAME CONFIG
+        const config = {
+
+            type: Phaser.AUTO,
+            parent: 'game',
+            width: 800,
+            height: 500,
+            scale: {
+                mode: Phaser.Scale.ENVELOP,
+                autoCenter: Phaser.Scale.Both
+            },
+
+            physics: {
+                default: 'arcade',
+                arcade: {
+                    gravity: false,
+                    //debug: true,
+                },
+            },
+
+            scene: [GamePlay]
+
+
+
+        };
+
+        const game = new Phaser.Game(config);
+
+    </script>
+
+
+</body>
+
+</html>
